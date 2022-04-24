@@ -79,31 +79,29 @@ let addi = document.getElementById('add');
 let substracti = document.getElementById('substract');
 let multiplyi = document.getElementById('multiply');
 let dividei = document.getElementById('divide');
+
 equals.addEventListener('click', (e) => {
     console.log(e.target);
-    key = e.target.textContent;
-    
+    result = operate(n1, n2, operator);
+    theDisplay.textContent = result;
 });
 addi.addEventListener('click', (e) => {
     console.log(e.target);
     operator = e.target.textContent;
-    theDisplay.textContent = undefined;
+    
 });
 substracti.addEventListener('click', (e) => {
     console.log(e.target);
     operator = e.target.textContent;
-    theDisplay.textContent = undefined;
 });
 multiplyi.addEventListener('click', (e) => {
     console.log(e.target);
     operator = e.target.textContent;
-    theDisplay.textContent = undefined;         
 
 });
 dividei.addEventListener('click', (e) => {
     console.log(e.target);
     operator = e.target.textContent;
-    theDisplay.textContent = undefined;
 });
 
 
@@ -116,7 +114,7 @@ btnNumber.addEventListener('click', (e) => {
 
         if (!(n2))
             {
-
+                theDisplay.textContent = undefined;
                 theDisplay.textContent += e.target.textContent;
                 n1 = theDisplay.textContent;
                 
@@ -124,7 +122,9 @@ btnNumber.addEventListener('click', (e) => {
 
 
         if(!(n2) && operator != undefined){
+            
             n2 = e.target.textContent;
+            
             
             }
        {    
@@ -134,12 +134,7 @@ btnNumber.addEventListener('click', (e) => {
 
     
     
-    if (hasNumber.test(n2) && operator != undefined && key == '=') {
-        
-       result += operate(n1, n2, operator);
-       theDisplay.textContent = result;
-       
-    }
+  
      
    
 });
