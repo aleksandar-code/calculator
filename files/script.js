@@ -42,4 +42,43 @@ function operate(x, y, operator) {
     return 'error';
 }
 
-// Step 3. 
+// Step 3. html & css 
+
+// Step 4. create funcitons that populate the display
+// when a button number is clicked
+// and store the textContent of it 
+// in a variable called n1
+
+let btnNumber = document.getElementById('buttons');
+
+let theDisplay = document.getElementById('display');
+
+// input of user 
+let n1;
+let operator;
+
+var hasNumber = /\d/;  
+theDisplay.textContent = n1;
+
+btnNumber.addEventListener('click', (e) => {
+    let verifyContent = e.target.textContent;
+    if (!(hasNumber.test(verifyContent))) {
+        operator = e.target.textContent;
+       
+       console.log(theDisplay)
+
+    }
+});
+
+btnNumber.addEventListener('click', (e) => {
+    let verifyContent = e.target.textContent;
+    console.log(verifyContent)
+    if (hasNumber.test(verifyContent)) 
+       {
+            n1 = e.target.textContent;
+            theDisplay.textContent = n1;
+            console.log(theDisplay)
+    }
+   
+});
+

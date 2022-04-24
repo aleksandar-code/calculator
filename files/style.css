@@ -77,7 +77,6 @@ select {
 #container {
     display: flex;
     flex-direction: column;
-    border: 2px solid blue;
     align-items: center;
     justify-content: center;
     height: 100vh;
@@ -116,7 +115,6 @@ button {
     width: 100px;
     border: 2px solid black;
     font-size: 30px;
-    border-radius: 8px;
 }
 
 #buttons {
