@@ -1,20 +1,28 @@
 // Step 1. create basic math functions
 
 function add(x, y) {
-    return x + y;
+    let result = (+x) + (+y);
+
+    return result;
     
 }
 
 function substract(x, y) {
-    return x - y;
+    let result = (+x) - (+y);
+
+    return result;
 }
 
 function multiply(x, y) {
-    return x * y;
+    let result = (+x) * (+y);
+
+    return result;
 }
 
 function divide(x, y) {
-    return x / y;
+    let result = (+x) / (+y);
+
+    return result;
 }
 // Step 2. create the function operate, 
 // takes an operator and two numbers as parameters. 
@@ -24,23 +32,25 @@ function divide(x, y) {
 // at the end of operation return the result
 
 function operate(x, y, operator) {
+    let result = 0;
     
-    if (operator == 0) {
-        return add(x, y);
+
+    if (operator === '+') {
+        result = add(x, y);
     }
 
-    if (operator == 1) {
-        return substract(x, y);
+    if (operator == "-") {
+        result = substract(x, y);
     }
 
-    if (operator == 2) {
-        return multiply(x, y);
+    if (operator == "*") {
+        result = multiply(x, y);
     }
 
-    if (operator == 3) {
-        return divide(x, y);
+    if (operator == "/") {
+        result = divide(x, y);
     }
-    return 'error';
+     return +result;
 }
 
 // Step 3. html & css 
@@ -60,34 +70,75 @@ let operator;
 let n2;
 let rounder = 0;
 var hasNumber = /\d/;  
+let result = 0;
+let key;
 
+let equals = document.getElementById('equal');
 
+let addi = document.getElementById('add');
+let substracti = document.getElementById('substract');
+let multiplyi = document.getElementById('multiply');
+let dividei = document.getElementById('divide');
+equals.addEventListener('click', (e) => {
+    console.log(e.target);
+    key = e.target.textContent;
+    
+});
+addi.addEventListener('click', (e) => {
+    console.log(e.target);
+    operator = e.target.textContent;
+    theDisplay.textContent = undefined;
+});
+substracti.addEventListener('click', (e) => {
+    console.log(e.target);
+    operator = e.target.textContent;
+    theDisplay.textContent = undefined;
+});
+multiplyi.addEventListener('click', (e) => {
+    console.log(e.target);
+    operator = e.target.textContent;
+    theDisplay.textContent = undefined;         
+
+});
+dividei.addEventListener('click', (e) => {
+    console.log(e.target);
+    operator = e.target.textContent;
+    theDisplay.textContent = undefined;
+});
 
 
 btnNumber.addEventListener('click', (e) => {
     let verifyContent = e.target.textContent;
     console.log(verifyContent)
     
-    if (hasNumber.test(verifyContent))
-       {    if (rounder < 1)
-            {theDisplay.textContent = e.target.textContent;
-                n1 = e.target.textContent;}
-            ++rounder;
-            if(rounder > 1){
-            n2 = e.target.textContent;
+    if (hasNumber.test(verifyContent)) {
+            
+
+        if (!(n2))
+            {
+
+                theDisplay.textContent += e.target.textContent;
+                n1 = theDisplay.textContent;
+                
             }
-    }
-    if (!(hasNumber.test(verifyContent))) {
-        operator = e.target.textContent;
-        
-        if (rounder >=2) {n2 = n1;}
 
 
-    }
+        if(!(n2) && operator != undefined){
+            n2 = e.target.textContent;
+            
+            }
+       {    
+            
+    }}
+
+
     
-    if (theDisplay.textContent === n1 && operator != undefined && rounder >=2) {
-       n1 = add(n1, n2);
-       theDisplay.textContent = n1;
+    
+    if (hasNumber.test(n2) && operator != undefined && key == '=') {
+        
+       result += operate(n1, n2, operator);
+       theDisplay.textContent = result;
+       
     }
      
    
