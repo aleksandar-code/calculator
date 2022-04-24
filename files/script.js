@@ -2,6 +2,7 @@
 
 function add(x, y) {
     return x + y;
+    
 }
 
 function substract(x, y) {
@@ -56,29 +57,39 @@ let theDisplay = document.getElementById('display');
 // input of user 
 let n1;
 let operator;
-
+let n2;
+let rounder = 0;
 var hasNumber = /\d/;  
-theDisplay.textContent = n1;
 
-btnNumber.addEventListener('click', (e) => {
-    let verifyContent = e.target.textContent;
-    if (!(hasNumber.test(verifyContent))) {
-        operator = e.target.textContent;
-       
-       console.log(theDisplay)
 
-    }
-});
+
 
 btnNumber.addEventListener('click', (e) => {
     let verifyContent = e.target.textContent;
     console.log(verifyContent)
-    if (hasNumber.test(verifyContent)) 
-       {
-            n1 = e.target.textContent;
-            theDisplay.textContent = n1;
-            console.log(theDisplay)
+    
+    if (hasNumber.test(verifyContent))
+       {    if (rounder < 1)
+            {theDisplay.textContent = e.target.textContent;
+                n1 = e.target.textContent;}
+            ++rounder;
+            if(rounder > 1){
+            n2 = e.target.textContent;
+            }
     }
+    if (!(hasNumber.test(verifyContent))) {
+        operator = e.target.textContent;
+        
+        if (rounder >=2) {n2 = n1;}
+
+
+    }
+    
+    if (theDisplay.textContent === n1 && operator != undefined && rounder >=2) {
+       n1 = add(n1, n2);
+       theDisplay.textContent = n1;
+    }
+     
    
 });
 
