@@ -34,7 +34,7 @@ function divide(x, y) {
 function operate(x, y, operator) {
     let result = 0;
     
-
+    counter = 1;
     if (operator === '+') {
         result = add(x, y);
     }
@@ -50,6 +50,7 @@ function operate(x, y, operator) {
     if (operator == "/") {
         result = divide(x, y);
     }
+    
      return +result;
 }
 
@@ -68,7 +69,7 @@ let theDisplay = document.getElementById('display');
 let input = [];
 let j = 0;
 let n1 =[];
-let counter;
+let counter = 0;
 let operator;
 let n2 = [];
 let n3 = [];
@@ -91,8 +92,9 @@ let decimal = document.getElementById('decimal');
 equals.addEventListener('click', (e) => {
     
     console.log(e.target);
-   
-    key += e.target.textContent;
+//    may be this function isn't the best way to get the desired output 
+
+    key = e.target.textContent;
     
     result = operate(n1, n2, operator);
     console.log(result)
@@ -131,7 +133,11 @@ equals.addEventListener('click', (e) => {
     
     
     getPreviousResult(result);
-    theDisplay.textContent = result;
+    theDisplay.textContent = n1;
+    operator == undefined;
+  
+    
+
 
     
 // do a function if click once to equals then n3, n3, operator
@@ -145,29 +151,51 @@ equals.addEventListener('click', (e) => {
 addi.addEventListener('click', (e) => {
     console.log(e.target);
     theDisplay.textContent = undefined;
+    if (operator && counter != 1) {
+        result = operate(n1,n2,operator)
+        n1 = result;
+        
+    }
     operator = e.target.textContent;
-    
+    counter = 0;
     
     
 });
 substracti.addEventListener('click', (e) => {
     console.log(e.target);
     theDisplay.textContent = undefined;
+    if (operator && counter != 1) {
+        result = operate(n1,n2,operator)
+        n1 = result;
+        
+    }
     operator = e.target.textContent;
-    
+    counter = 0;
 
 });
 multiplyi.addEventListener('click', (e) => {
     console.log(e.target);
     theDisplay.textContent = undefined;
+    if (operator && counter != 1) {
+        result = operate(n1,n2,operator)
+        n1 = result;
+        
+    }
     operator = e.target.textContent;
+    counter = 0;
    
 
 });
 dividei.addEventListener('click', (e) => {
     console.log(e.target);
     theDisplay.textContent = undefined;
+    if (operator && counter != 1) {
+        result = operate(n1,n2,operator)
+        n1 = result;
+        
+    }
     operator = e.target.textContent;
+    counter = 0;
     
 
 });
