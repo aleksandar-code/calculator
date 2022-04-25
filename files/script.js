@@ -79,13 +79,14 @@ let key = [];
 let i = 0;
 
 
-
 let equals = document.getElementById('equal');
 
 let addi = document.getElementById('add');
 let substracti = document.getElementById('substract');
 let multiplyi = document.getElementById('multiply');
 let dividei = document.getElementById('divide');
+
+let decimal = document.getElementById('decimal');
 
 equals.addEventListener('click', (e) => {
     
@@ -170,6 +171,15 @@ dividei.addEventListener('click', (e) => {
     
 
 });
+decimal.addEventListener('click', (e) => {
+    console.log(e.target);
+    
+  
+
+    theDisplay.textContent += e.target.textContent;
+    
+
+});
 
 
 btnNumber.addEventListener('click', (e) => {
@@ -185,6 +195,7 @@ btnNumber.addEventListener('click', (e) => {
           
         ++i;
         
+        
     }
     else if (operator && hasNumber.test(verifyContent)) {
         
@@ -197,6 +208,7 @@ btnNumber.addEventListener('click', (e) => {
         ++j;
         
     }
+    
 
 
 
