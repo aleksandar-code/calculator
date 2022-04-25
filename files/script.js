@@ -65,13 +65,20 @@ let btnNumber = document.getElementById('buttons');
 let theDisplay = document.getElementById('display');
 
 // input of user 
-let n1;
+let input = [];
+let j = 0;
+let n1 =[];
+let counter;
 let operator;
-let n2;
-let rounder = 0;
+let n2 = [];
+let n3 = [];
+let keepGoing = true;
 var hasNumber = /\d/;  
 let result = 0;
-let key;
+let key = [];
+let i = 0;
+
+
 
 let equals = document.getElementById('equal');
 
@@ -81,27 +88,57 @@ let multiplyi = document.getElementById('multiply');
 let dividei = document.getElementById('divide');
 
 equals.addEventListener('click', (e) => {
+    
     console.log(e.target);
+   
+    key += e.target.textContent;
+    
     result = operate(n1, n2, operator);
+    console.log(result)
+    if (key) {
+        theDisplay.textContent = undefined;
+        n2 = 0;
+        n1 = result;
+        
+    }
+    
+    getPreviousResult(result);
     theDisplay.textContent = result;
+
+    
+// do a function if click once to equals then n3, n3, operator
+
+// do is it just multiply text ?
+   
+
+    
+    
 });
 addi.addEventListener('click', (e) => {
     console.log(e.target);
+    theDisplay.textContent = undefined;
     operator = e.target.textContent;
+    
     
 });
 substracti.addEventListener('click', (e) => {
     console.log(e.target);
+    theDisplay.textContent = undefined;
     operator = e.target.textContent;
+
 });
 multiplyi.addEventListener('click', (e) => {
     console.log(e.target);
+    theDisplay.textContent = undefined;
     operator = e.target.textContent;
+
 
 });
 dividei.addEventListener('click', (e) => {
     console.log(e.target);
+    theDisplay.textContent = undefined;
     operator = e.target.textContent;
+
 });
 
 
@@ -109,33 +146,35 @@ btnNumber.addEventListener('click', (e) => {
     let verifyContent = e.target.textContent;
     console.log(verifyContent)
     
-    if (hasNumber.test(verifyContent)) {
-            
+    if(hasNumber.test(verifyContent) && operator == undefined) {
+        
+        input[i] = e.target.textContent;
+        n1 += input[i];
+        theDisplay.textContent += e.target.textContent
+         
+          
+        ++i;
+        
+    }
+    else if (operator && hasNumber.test(verifyContent)) {
+        
+        input[j] = e.target.textContent;
+        n2 += input[j];
+        theDisplay.textContent += e.target.textContent
+          
+        
 
-        if (!(n2))
-            {
-                theDisplay.textContent = undefined;
-                theDisplay.textContent += e.target.textContent;
-                n1 = theDisplay.textContent;
-                
-            }
+        ++j;
+        
+    }
 
 
-        if(!(n2) && operator != undefined){
-            
-            n2 = e.target.textContent;
-            
-            
-            }
-       {    
-            
-    }}
 
-
-    
-    
-  
-     
-   
 });
 
+
+function getPreviousResult(a) {
+    n3 += a;
+
+
+}
