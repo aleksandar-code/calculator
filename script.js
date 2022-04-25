@@ -52,7 +52,8 @@ function operate(x, y, operator) {
     }
     
     
-
+  result =  Math.round(result * 100) / 100;
+  console.log(result)
      return result;
 }
 
