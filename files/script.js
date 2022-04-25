@@ -21,7 +21,7 @@ function multiply(x, y) {
 
 function divide(x, y) {
     let result = (+x) / (+y);
-
+   
     return result;
 }
 // Step 2. create the function operate, 
@@ -51,10 +51,14 @@ function operate(x, y, operator) {
         result = divide(x, y);
     }
     
-     return +result;
+    
+
+     return result;
 }
 
 // Step 3. html & css 
+
+
 
 // Step 4. create funcitons that populate the display
 // when a button number is clicked
@@ -63,7 +67,7 @@ function operate(x, y, operator) {
 
 let btnNumber = document.getElementById('buttons');
 
-let theDisplay = document.getElementById('display');
+
 
 // input of user 
 let input = [];
@@ -73,12 +77,17 @@ let counter = 0;
 let operator;
 let n2 = [];
 let n3 = [];
-let keepGoing = true;
 var hasNumber = /\d/;  
 let result = 0;
 let key = [];
 let i = 0;
 
+// topdis output the numbers and botdis output result
+let topdis = document.getElementById('topdisplay');
+let botdis = document.getElementById('botdisplay');
+
+
+let clear = document.getElementById('clear');
 
 let equals = document.getElementById('equal');
 
@@ -100,7 +109,7 @@ equals.addEventListener('click', (e) => {
     console.log(result)
     if (key && operator == '+') {
         
-        theDisplay.textContent = undefined;
+        topdis.textContent = undefined;
         
         
         n1 = result;
@@ -108,7 +117,7 @@ equals.addEventListener('click', (e) => {
     }
     if (key && operator == '-') {
         
-        theDisplay.textContent = undefined;
+        topdis.textContent = undefined;
         
         
         n1 = result;
@@ -116,7 +125,7 @@ equals.addEventListener('click', (e) => {
     }
     if (key && operator == '*' ) {
         
-        theDisplay.textContent = undefined;
+        topdis.textContent = undefined;
         
        
         n1 = result;
@@ -124,7 +133,7 @@ equals.addEventListener('click', (e) => {
     }
     if (key && operator == '/' ) {
         
-        theDisplay.textContent = undefined;
+        topdis.textContent = undefined;
         
         
         n1 = result;
@@ -133,7 +142,7 @@ equals.addEventListener('click', (e) => {
     
     
     getPreviousResult(result);
-    theDisplay.textContent = n1;
+    botdis.textContent = n1;
     operator == undefined;
   
     
@@ -148,13 +157,23 @@ equals.addEventListener('click', (e) => {
     
     
 });
+
+clear.addEventListener('click', (e) => {
+    n1 = null;
+    n2 = null;
+    result = null;
+    topdis.textContent = null;
+    botdis.textContent = null;
+    operator = null;
+});
+
 addi.addEventListener('click', (e) => {
     console.log(e.target);
-    theDisplay.textContent = undefined;
+    topdis.textContent = undefined;
     if (operator && counter != 1) {
         result = operate(n1,n2,operator)
         n1 = result;
-        
+        botdis.textContent = n1
     }
     operator = e.target.textContent;
     counter = 0;
@@ -163,11 +182,11 @@ addi.addEventListener('click', (e) => {
 });
 substracti.addEventListener('click', (e) => {
     console.log(e.target);
-    theDisplay.textContent = undefined;
+    topdis.textContent = undefined;
     if (operator && counter != 1) {
         result = operate(n1,n2,operator)
         n1 = result;
-        
+        botdis.textContent = n1
     }
     operator = e.target.textContent;
     counter = 0;
@@ -175,11 +194,11 @@ substracti.addEventListener('click', (e) => {
 });
 multiplyi.addEventListener('click', (e) => {
     console.log(e.target);
-    theDisplay.textContent = undefined;
+    topdis.textContent = undefined;
     if (operator && counter != 1) {
         result = operate(n1,n2,operator)
         n1 = result;
-        
+        botdis.textContent = n1
     }
     operator = e.target.textContent;
     counter = 0;
@@ -188,11 +207,11 @@ multiplyi.addEventListener('click', (e) => {
 });
 dividei.addEventListener('click', (e) => {
     console.log(e.target);
-    theDisplay.textContent = undefined;
+    topdis.textContent = undefined;
     if (operator && counter != 1) {
         result = operate(n1,n2,operator)
         n1 = result;
-        
+        botdis.textContent = n1
     }
     operator = e.target.textContent;
     counter = 0;
@@ -204,7 +223,7 @@ decimal.addEventListener('click', (e) => {
     
   
 
-    theDisplay.textContent += e.target.textContent;
+    topdis.textContent += e.target.textContent;
     
 
 });
@@ -218,19 +237,20 @@ btnNumber.addEventListener('click', (e) => {
         
         input[i] = e.target.textContent;
        
-        theDisplay.textContent += e.target.textContent
-        n1 = theDisplay.textContent;
+        topdis.textContent += e.target.textContent
+        n1 = topdis.textContent;
           
         ++i;
         
         
     }
-    else if (operator && hasNumber.test(verifyContent)) {
+   
+    if (operator && hasNumber.test(verifyContent)) {
         
         input[j] = e.target.textContent;
        
-        theDisplay.textContent += e.target.textContent;
-        n2 = theDisplay.textContent;
+        topdis.textContent += e.target.textContent;
+        n2 = topdis.textContent;
         
 
         ++j;
@@ -238,7 +258,12 @@ btnNumber.addEventListener('click', (e) => {
     }
     
 
-
+    if (result == Infinity) {
+        botdis.textContent = "Stop it get some help";
+    }
+    else if (isNaN(result)) {
+        botdis.textContent = "Stop it get some help"
+    }
 
 });
 
