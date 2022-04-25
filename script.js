@@ -276,7 +276,7 @@ btnNumber.addEventListener('click', (e) => {
         result = null;
         alert('The result is 0 lmao');
     }
-    else if (isNaN(result)) {
+     if (isNaN(result)) {
         botdis.textContent = "Stop it get some help";
         n1 = null;
         n2 = null;
