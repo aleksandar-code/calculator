@@ -181,7 +181,7 @@ btnNumber.addEventListener('click', (e) => {
         input[i] = e.target.textContent;
        
         theDisplay.textContent += e.target.textContent
-         n1 += e.target.textContent
+        n1 = theDisplay.textContent;
           
         ++i;
         
@@ -191,7 +191,7 @@ btnNumber.addEventListener('click', (e) => {
         input[j] = e.target.textContent;
        
         theDisplay.textContent += e.target.textContent;
-        n2 = e.target.textContent;
+        n2 = theDisplay.textContent;
         
 
         ++j;
