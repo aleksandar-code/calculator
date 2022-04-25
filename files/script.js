@@ -95,12 +95,39 @@ equals.addEventListener('click', (e) => {
     
     result = operate(n1, n2, operator);
     console.log(result)
-    if (key) {
+    if (key && operator == '+') {
+        
         theDisplay.textContent = undefined;
-        n2 = 0;
+        
+        
         n1 = result;
         
     }
+    if (key && operator == '-') {
+        
+        theDisplay.textContent = undefined;
+        
+        
+        n1 = result;
+        
+    }
+    if (key && operator == '*' ) {
+        
+        theDisplay.textContent = undefined;
+        
+       
+        n1 = result;
+        
+    }
+    if (key && operator == '/' ) {
+        
+        theDisplay.textContent = undefined;
+        
+        
+        n1 = result;
+        
+    }
+    
     
     getPreviousResult(result);
     theDisplay.textContent = result;
@@ -120,24 +147,27 @@ addi.addEventListener('click', (e) => {
     operator = e.target.textContent;
     
     
+    
 });
 substracti.addEventListener('click', (e) => {
     console.log(e.target);
     theDisplay.textContent = undefined;
     operator = e.target.textContent;
+    
 
 });
 multiplyi.addEventListener('click', (e) => {
     console.log(e.target);
     theDisplay.textContent = undefined;
     operator = e.target.textContent;
-
+   
 
 });
 dividei.addEventListener('click', (e) => {
     console.log(e.target);
     theDisplay.textContent = undefined;
     operator = e.target.textContent;
+    
 
 });
 
@@ -149,9 +179,9 @@ btnNumber.addEventListener('click', (e) => {
     if(hasNumber.test(verifyContent) && operator == undefined) {
         
         input[i] = e.target.textContent;
-        n1 += input[i];
+       
         theDisplay.textContent += e.target.textContent
-         
+         n1 += e.target.textContent
           
         ++i;
         
@@ -159,9 +189,9 @@ btnNumber.addEventListener('click', (e) => {
     else if (operator && hasNumber.test(verifyContent)) {
         
         input[j] = e.target.textContent;
-        n2 += input[j];
-        theDisplay.textContent += e.target.textContent
-          
+       
+        theDisplay.textContent += e.target.textContent;
+        n2 = e.target.textContent;
         
 
         ++j;
