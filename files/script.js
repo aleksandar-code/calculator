@@ -221,7 +221,13 @@ dividei.addEventListener('click', (e) => {
 decimal.addEventListener('click', (e) => {
     console.log(e.target);
     
-  
+  if (topdis.textContent.match((/\./))) {
+        
+        return 0;
+   }
+      
+    
+   
 
     topdis.textContent += e.target.textContent;
     
@@ -238,6 +244,7 @@ btnNumber.addEventListener('click', (e) => {
         input[i] = e.target.textContent;
        
         topdis.textContent += e.target.textContent
+        
         n1 = topdis.textContent;
           
         ++i;
@@ -262,8 +269,9 @@ btnNumber.addEventListener('click', (e) => {
         botdis.textContent = "Stop it get some help";
     }
     else if (isNaN(result)) {
-        botdis.textContent = "Stop it get some help"
+        botdis.textContent = "Stop it get some help";
     }
+    
 
 });
 
