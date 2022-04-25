@@ -222,7 +222,7 @@ decimal.addEventListener('click', (e) => {
     console.log(e.target);
     
   if (topdis.textContent.match((/\./))) {
-        
+        alert("You can't input more than 1 dot");
         return 0;
    }
       
@@ -267,9 +267,11 @@ btnNumber.addEventListener('click', (e) => {
 
     if (result == Infinity) {
         botdis.textContent = "Stop it get some help";
+        alert('The result is 0 lmao');
     }
     else if (isNaN(result)) {
         botdis.textContent = "Stop it get some help";
+        alert('ERROR, launching the missiles');
     }
     
 
