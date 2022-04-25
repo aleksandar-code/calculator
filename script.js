@@ -155,8 +155,7 @@ equals.addEventListener('click', (e) => {
 // do is it just multiply text ?
    
 
-    
-    
+
 });
 
 clear.addEventListener('click', (e) => {
@@ -204,8 +203,8 @@ multiplyi.addEventListener('click', (e) => {
     }
     operator = e.target.textContent;
     counter = 0;
-   
-
+    
+    
 });
 dividei.addEventListener('click', (e) => {
     console.log(e.target);
@@ -223,17 +222,17 @@ dividei.addEventListener('click', (e) => {
 decimal.addEventListener('click', (e) => {
     console.log(e.target);
     
-  if (topdis.textContent.match((/\./))) {
+    if (topdis.textContent.match((/\./))) {
         alert("You can't input more than 1 dot");
         return 0;
    }
-      
-    
    
-
-    topdis.textContent += e.target.textContent;
-    
-
+   
+   
+   
+   topdis.textContent += e.target.textContent;
+   
+   
 });
 
 
@@ -247,11 +246,11 @@ btnNumber.addEventListener('click', (e) => {
     if(hasNumber.test(verifyContent) && operator == null) {
         
         input[i] = e.target.textContent;
-       
+        
         topdis.textContent += e.target.textContent
         
         n1 = topdis.textContent;
-          
+        
         ++i;
         
         
@@ -269,13 +268,19 @@ btnNumber.addEventListener('click', (e) => {
         
     }
     
-
+    
     if (result == Infinity) {
         botdis.textContent = "Stop it get some help";
+        n1 = null;
+        n2 = null;
+        result = null;
         alert('The result is 0 lmao');
     }
     else if (isNaN(result)) {
         botdis.textContent = "Stop it get some help";
+        n1 = null;
+        n2 = null;
+        result = null;
         alert('ERROR, launching the missiles');
     }
     
