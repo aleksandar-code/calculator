@@ -78,8 +78,8 @@ let operator;
 let n2 = [];
 let n3 = [];
 var hasNumber = /\d/;  
-let result = 0;
-let key = [];
+let result = null;
+let key = null;
 let i = 0;
 
 // topdis output the numbers and botdis output result
@@ -143,7 +143,8 @@ equals.addEventListener('click', (e) => {
     
     getPreviousResult(result);
     botdis.textContent = n1;
-    operator == undefined;
+    operator = null;
+    key = null;
   
     
 
@@ -165,12 +166,13 @@ clear.addEventListener('click', (e) => {
     topdis.textContent = null;
     botdis.textContent = null;
     operator = null;
+    key = null;
 });
 
 addi.addEventListener('click', (e) => {
     console.log(e.target);
     topdis.textContent = undefined;
-    if (operator && counter != 1) {
+    if (operator && counter != 1 && n2 != null ) {
         result = operate(n1,n2,operator)
         n1 = result;
         botdis.textContent = n1
@@ -183,7 +185,7 @@ addi.addEventListener('click', (e) => {
 substracti.addEventListener('click', (e) => {
     console.log(e.target);
     topdis.textContent = undefined;
-    if (operator && counter != 1) {
+    if (operator && counter != 1 && n2 != null ) {
         result = operate(n1,n2,operator)
         n1 = result;
         botdis.textContent = n1
@@ -195,7 +197,7 @@ substracti.addEventListener('click', (e) => {
 multiplyi.addEventListener('click', (e) => {
     console.log(e.target);
     topdis.textContent = undefined;
-    if (operator && counter != 1) {
+    if (operator && counter != 1 && n2 != null) {
         result = operate(n1,n2,operator)
         n1 = result;
         botdis.textContent = n1
@@ -208,7 +210,7 @@ multiplyi.addEventListener('click', (e) => {
 dividei.addEventListener('click', (e) => {
     console.log(e.target);
     topdis.textContent = undefined;
-    if (operator && counter != 1) {
+    if (operator && counter != 1 && n2 != null) {
         result = operate(n1,n2,operator)
         n1 = result;
         botdis.textContent = n1
@@ -238,8 +240,11 @@ decimal.addEventListener('click', (e) => {
 btnNumber.addEventListener('click', (e) => {
     let verifyContent = e.target.textContent;
     console.log(verifyContent)
+    if (key != null && result != null) {
+        operator = null;
+    }
     
-    if(hasNumber.test(verifyContent) && operator == undefined) {
+    if(hasNumber.test(verifyContent) && operator == null) {
         
         input[i] = e.target.textContent;
        
