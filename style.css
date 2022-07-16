@@ -120,6 +120,7 @@ button {
     border: 2px solid #41250f;
     font-size: 30px;
     color: aliceblue;
+    font-weight: bolder;
 }
 
 #buttons {
