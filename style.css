@@ -111,6 +111,7 @@ select {
     background-color: #5a3a22;
     flex: 0 0 auto;
     color: aliceblue;
+    font-weight: bolder;
 }
 
 button {
