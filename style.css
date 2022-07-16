@@ -106,16 +106,16 @@ select {
     flex-direction: column;
     height: 100px;
     justify-content: center;
-    border: 4px solid black;
-    border-bottom: 2px solid black;
-    background-color: rgb(190, 190, 190);
+    border: 4px solid #41250f;
+    border-bottom: 2px solid #41250f;
+    background-color: #5a3a22;
     flex: 0 0 auto;
 }
 
 button {
     height: 80px;
     width: 100px;
-    border: 2px solid black;
+    border: 2px solid #41250f;
     font-size: 30px;
 }
 
@@ -129,14 +129,14 @@ button {
 }
 
 .numbers {
-    background-color: rgb(10, 117, 117);
+    background-color: #5a3a22;
 }
 
 .options {
-    background-color: #2698bb;
+    background-color: #5a3a22;
 }
 .operators {
-    background-color: rgb(219, 152, 26);
+    background-color: #5a3a22;
 }
 
 #topdisplay {
