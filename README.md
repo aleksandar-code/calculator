@@ -1,3 +1,3 @@
 # Calculator
 
-https://shiisui.github.io/Calculator/
+https://aleksandar-code.github.io/Calculator/
