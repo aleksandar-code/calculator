@@ -83,7 +83,7 @@ select {
   
 }
 #calc {
-    border: 10px solid rgb(45, 46, 45);
+    border: 10px solid rgba(155, 83, 15, 0.788);
     width: 420px;
     flex-wrap: wrap;
     display: flex;
