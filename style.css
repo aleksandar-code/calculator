@@ -110,6 +110,7 @@ select {
     border-bottom: 2px solid #41250f;
     background-color: #5a3a22;
     flex: 0 0 auto;
+    color: aliceblue;
 }
 
 button {
