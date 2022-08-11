@@ -146,16 +146,6 @@ equals.addEventListener('click', (e) => {
     botdis.textContent = n1;
     operator = null;
     key = null;
-  
-    
-
-
-    
-// do a function if click once to equals then n3, n3, operator
-
-// do is it just multiply text ?
-   
-
 
 });
 
