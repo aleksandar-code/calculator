@@ -1,5 +1,4 @@
 
-
 function add(x, y) {
     let result = (+x) + (+y);
 
@@ -27,7 +26,6 @@ function divide(x, y) {
 
 function operate(x, y, operator) {
     let result = 0;
-    
     counter = 1;
     if (operator === '+') {
         result = add(x, y);
@@ -44,21 +42,12 @@ function operate(x, y, operator) {
     if (operator == "/") {
         result = divide(x, y);
     }
-    
-    
   result =  Math.round(result * 100) / 100;
   console.log(result)
      return result;
 }
 
-
-
-
-
 let btnNumber = document.getElementById('buttons');
-
-
-
 let input = [];
 let j = 0;
 let n1 =[];
@@ -70,64 +59,37 @@ var hasNumber = /\d/;
 let result = null;
 let key = null;
 let i = 0;
-
 let topdis = document.getElementById('topdisplay');
 let botdis = document.getElementById('botdisplay');
-
-
 let clear = document.getElementById('clear');
-
 let equals = document.getElementById('equal');
-
 let addi = document.getElementById('add');
 let substracti = document.getElementById('substract');
 let multiplyi = document.getElementById('multiply');
 let dividei = document.getElementById('divide');
-
 let decimal = document.getElementById('decimal');
 
 equals.addEventListener('click', (e) => {
-    
     console.log(e.target);
-
     key = e.target.textContent;
-    
     result = operate(n1, n2, operator);
     console.log(result)
     if (key && operator == '+') {
-        
         topdis.textContent = undefined;
-        
-        
         n1 = result;
-        
     }
     if (key && operator == '-') {
-        
         topdis.textContent = undefined;
-        
-        
         n1 = result;
-        
     }
     if (key && operator == '*' ) {
-        
         topdis.textContent = undefined;
-        
-       
         n1 = result;
-        
     }
     if (key && operator == '/' ) {
-        
         topdis.textContent = undefined;
-        
-        
         n1 = result;
-        
     }
-    
-    
     getPreviousResult(result);
     botdis.textContent = n1;
     operator = null;
@@ -155,8 +117,6 @@ addi.addEventListener('click', (e) => {
     }
     operator = e.target.textContent;
     counter = 0;
-    
-    
 });
 substracti.addEventListener('click', (e) => {
     console.log(e.target);
@@ -168,7 +128,6 @@ substracti.addEventListener('click', (e) => {
     }
     operator = e.target.textContent;
     counter = 0;
-
 });
 multiplyi.addEventListener('click', (e) => {
     console.log(e.target);
@@ -180,8 +139,6 @@ multiplyi.addEventListener('click', (e) => {
     }
     operator = e.target.textContent;
     counter = 0;
-    
-    
 });
 dividei.addEventListener('click', (e) => {
     console.log(e.target);
@@ -193,8 +150,6 @@ dividei.addEventListener('click', (e) => {
     }
     operator = e.target.textContent;
     counter = 0;
-    
-
 });
 decimal.addEventListener('click', (e) => {
     console.log(e.target);
@@ -203,15 +158,8 @@ decimal.addEventListener('click', (e) => {
         alert("You can't input more than 1 dot");
         return 0;
    }
-   
-   
-   
-   
    topdis.textContent += e.target.textContent;
-   
-   
 });
-
 
 btnNumber.addEventListener('click', (e) => {
     let verifyContent = e.target.textContent;
@@ -219,7 +167,6 @@ btnNumber.addEventListener('click', (e) => {
     if (key != null && result != null) {
         operator = null;
     }
-    
     if(hasNumber.test(verifyContent) && operator == null) {
         
         input[i] = e.target.textContent;
@@ -232,7 +179,6 @@ btnNumber.addEventListener('click', (e) => {
         
         
     }
-   
     if (operator && hasNumber.test(verifyContent)) {
         
         input[j] = e.target.textContent;
@@ -244,8 +190,6 @@ btnNumber.addEventListener('click', (e) => {
         ++j;
         
     }
-    
-    
     if (result == Infinity) {
         botdis.textContent = "Stop it get some help";
         n1 = null;
@@ -260,13 +204,8 @@ btnNumber.addEventListener('click', (e) => {
         result = null;
         alert('ERROR, launching the missiles');
     }
-    
-
 });
-
 
 function getPreviousResult(a) {
     n3 += a;
-
-
 }
