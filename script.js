@@ -1,4 +1,4 @@
-// Step 1. create basic math functions
+
 
 function add(x, y) {
     let result = (+x) + (+y);
@@ -24,12 +24,6 @@ function divide(x, y) {
    
     return result;
 }
-// Step 2. create the function operate, 
-// takes an operator and two numbers as parameters. 
-// And then calls the functions on the numbers
-// if operator + add(x, y); so operator variable will be a number
-// 0 will be add, 1 substract 2 multiply 3 divide
-// at the end of operation return the result
 
 function operate(x, y, operator) {
     let result = 0;
@@ -57,20 +51,14 @@ function operate(x, y, operator) {
      return result;
 }
 
-// Step 3. html & css 
 
 
 
-// Step 4. create funcitons that populate the display
-// when a button number is clicked
-// and store the textContent of it 
-// in a variable called n1
 
 let btnNumber = document.getElementById('buttons');
 
 
 
-// input of user 
 let input = [];
 let j = 0;
 let n1 =[];
@@ -83,7 +71,6 @@ let result = null;
 let key = null;
 let i = 0;
 
-// topdis output the numbers and botdis output result
 let topdis = document.getElementById('topdisplay');
 let botdis = document.getElementById('botdisplay');
 
@@ -102,7 +89,6 @@ let decimal = document.getElementById('decimal');
 equals.addEventListener('click', (e) => {
     
     console.log(e.target);
-//    may be this function isn't the best way to get the desired output 
 
     key = e.target.textContent;
     
