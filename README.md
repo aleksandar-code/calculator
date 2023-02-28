@@ -10,7 +10,7 @@ Use <a href="https://aleksandar-code.github.io/calculator/" rel="nofollow">Calcu
 
 ## What it looks like
 
-![image](https://user-images.githubusercontent.com/83082486/214596505-723c7ba2-32eb-4518-a7df-5a624ed421d4.png)
+![image](https://user-images.githubusercontent.com/83082486/221873843-d04ba7d3-08bd-4dfd-99d8-5ecfe485302a.png)
 
 ## Features
 
