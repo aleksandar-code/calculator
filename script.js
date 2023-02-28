@@ -235,3 +235,16 @@ for (let classNumber = 0; classNumber < hoverOperators.length; classNumber++) {
 hoverOperators[classNumber].addEventListener('mouseout', (e) => {
     e.target.style.background = '#016CA4'
 });};
+
+let hoverClear = document.getElementsByClassName('options');
+
+
+for (let classNumber = 0; classNumber < hoverClear.length; classNumber++) {
+hoverClear[classNumber].addEventListener('mouseover', (e) => {
+    e.target.style.background = '#fd9c0b'
+});};
+
+for (let classNumber = 0; classNumber < hoverClear.length; classNumber++) {
+hoverClear[classNumber].addEventListener('mouseout', (e) => {
+    e.target.style.background = '#016CA4'
+});};
