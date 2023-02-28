@@ -221,6 +221,7 @@ function hoverMouse(classList, color, action) {
 }
 
 let hoverNumbers = document.getElementsByClassName('numbers');
+let hoverOperators = document.getElementsByClassName('operators');
 
 
 for (let classNumber = 0; classNumber < hoverNumbers.length; classNumber++) {
@@ -233,7 +234,6 @@ hoverNumbers[classNumber].addEventListener('mouseout', (e) => {
     e.target.style.background = '#4d8abd'
 });};
 
-let hoverOperators = document.getElementsByClassName('operators');
 
 
 for (let classNumber = 0; classNumber < hoverOperators.length; classNumber++) {
