@@ -222,3 +222,16 @@ for (let classNumber = 0; classNumber < hoverNumbers.length; classNumber++) {
 hoverNumbers[classNumber].addEventListener('mouseout', (e) => {
     e.target.style.background = '#4d8abd'
 });};
+
+let hoverOperators = document.getElementsByClassName('operators');
+
+
+for (let classNumber = 0; classNumber < hoverOperators.length; classNumber++) {
+hoverOperators[classNumber].addEventListener('mouseover', (e) => {
+    e.target.style.background = '#178bca'
+});};
+
+for (let classNumber = 0; classNumber < hoverOperators.length; classNumber++) {
+hoverOperators[classNumber].addEventListener('mouseout', (e) => {
+    e.target.style.background = '#016CA4'
+});};
