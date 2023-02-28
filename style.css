@@ -83,7 +83,7 @@ select {
   
 }
 #calc {
-    border: 10px solid rgba(155, 83, 15, 0.788);
+    border: 10px solid #5F9ED1;
     width: 420px;
     flex-wrap: wrap;
     display: flex;
@@ -105,9 +105,8 @@ select {
     flex-direction: column;
     height: 100px;
     justify-content: center;
-    border: 2px solid #41250f;
-    border-top: 4px solid #41250f ;
-    background-color: #5a3a22;
+    border-bottom: 10px solid #5F9ED1;
+    background-color: #016CA4;
     flex: 0 0 auto;
     color: aliceblue;
     font-weight: bolder;
@@ -116,7 +115,7 @@ select {
 button {
     height: 80px;
     width: 100px;
-    border: 2px solid #41250f;
+    border: 1px solid #000000;
     font-size: 30px;
     color: aliceblue;
     font-weight: bolder;
@@ -125,21 +124,20 @@ button {
 #buttons {
     display: flex;
     flex-wrap: wrap;
-    
 }
 #zero {
     width: 200px;
 }
 
 .numbers {
-    background-color: #5a3a22;
+    background-color: #016CA4;
 }
 
 .options {
-    background-color: #5a3a22;
+    background-color: #A1C9ED;
 }
 .operators {
-    background-color: #5a3a22;
+    background-color: #A1C9ED;
 }
 
 #topdisplay {
