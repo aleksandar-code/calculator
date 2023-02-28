@@ -209,3 +209,16 @@ btnNumber.addEventListener('click', (e) => {
 function getPreviousResult(a) {
     n3 += a;
 }
+
+let hoverNumbers = document.getElementsByClassName('numbers');
+
+
+for (let classNumber = 0; classNumber < hoverNumbers.length; classNumber++) {
+hoverNumbers[classNumber].addEventListener('mouseover', (e) => {
+    e.target.style.background = '#63a5db'
+});};
+
+for (let classNumber = 0; classNumber < hoverNumbers.length; classNumber++) {
+hoverNumbers[classNumber].addEventListener('mouseout', (e) => {
+    e.target.style.background = '#4d8abd'
+});};
