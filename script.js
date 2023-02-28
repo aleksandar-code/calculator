@@ -161,12 +161,27 @@ decimal.addEventListener('click', (e) => {
    topdis.textContent += e.target.textContent;
 });
 
+returnVariable = false;
+topdis.textContent = ""
+
+function checkTopDis(topdis) {
+    if (topdis.textContent.length > 22) {
+        returnVariable = true;
+    }
+    else {
+        returnVariable = false;
+    }
+}
+
 btnNumber.addEventListener('click', (e) => {
+    checkTopDis(topdis)
+    if (returnVariable == true) return
     let verifyContent = e.target.textContent;
     console.log(verifyContent)
     if (key != null && result != null) {
         operator = null;
     }
+
     if(hasNumber.test(verifyContent) && operator == null) {
         
         input[i] = e.target.textContent;
@@ -185,11 +200,10 @@ btnNumber.addEventListener('click', (e) => {
        
         topdis.textContent += e.target.textContent;
         n2 = topdis.textContent;
-        
-
         ++j;
         
     }
+
     if (result == Infinity) {
         botdis.textContent = "Stop it get some help";
         n1 = null;

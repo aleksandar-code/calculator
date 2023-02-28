@@ -94,7 +94,7 @@ select {
 
 
 .display {
-    text-align: right;
+    text-align: left;
     font-size: 30px;
     flex: 0 0 auto;
     height: 50px;
