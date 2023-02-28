@@ -210,6 +210,16 @@ function getPreviousResult(a) {
     n3 += a;
 }
 
+
+function hoverMouse(classList, color, action) {
+
+    for (let classNumber = 0; classNumber < classList.length; classNumber++) {
+        classList[classNumber].addEventListener(`${action}`, (e) => {
+            e.target.style.background = color
+        });};
+
+}
+
 let hoverNumbers = document.getElementsByClassName('numbers');
 
 
