@@ -151,3 +151,11 @@ button {
 #clear {
   width: 300px;
 }
+
+button:hover {
+  background-color: lightblue;
+}
+
+button:focus:not(.options, .numbers) {
+  background-color: rgb(221, 210, 49);
+}
